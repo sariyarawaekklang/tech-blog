@@ -2,9 +2,10 @@
   "name": "tech-blog",
   "version": "1.0.0",
   "description": "In this assignment, I built a CMS-style blog site where developers can publish their blog posts and comment on other developers' posts as well.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "seeds": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
