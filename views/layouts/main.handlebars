@@ -12,26 +12,33 @@
 </head>
 
 <body class="flex-column min-100-vh">
-  <header class="hero">
-    <h1 class="app-title">
-      <a href="/">Tech Blog!</a>
-    </h1>
-    <nav>
-      <button id="logout" class="btn-no-style">Logout</button>
-      <a href="/login">Login</a>
-    </nav>
-  </header>
+  <div class="wrapper">
+    <header class="hero">
+      <div>
+        <nav>
+          <a class="link" href="/">Home</a>
+            <a class="link" href="/dashboard">Dashboard</a>
+            {{#if loggedIn}}
+            <a class="link" href="/" id="logout">Logout</a>
+            {{else}}
+            <a class="link" href="/login">Login</a>
+            {{/if}}
+        </nav>
+      </div>
+      <h1 class="app-title">
+        <a href="/">Tech Blog!</a>
+      </h1>
+    </header>
 
 
-  <main class="flex-row justify-space-between">
-    {{{ body }}}
-  </main>
+    <main class="flex-row justify-space-between">
+      {{{ body }}}
+    </main>
+  </div>
 
-  <footer>
-    Thanks for visiting!
-  </footer>
-
+  {{#if loggedIn}}
   <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
