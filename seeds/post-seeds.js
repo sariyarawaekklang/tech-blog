@@ -2,18 +2,18 @@ const { Post } = require('../models');
 
 const postData = [
     {
-        title: 'post title 1',
-        post_content: 'post content 1',
+        title: 'Introduction to Algorithms',
+        post_content: 'In this post, you will learn the basics of algorithms.',
         user_id: 1
     },
     {
-        title: 'post title 2',
-        post_content: 'post content 2',
+        title: 'What is MERN?',
+        post_content: 'MERN stands for MongoDB, Express.js, React, and Node.js.',
         user_id: 2
     },
     {
-        title: 'post title 3',
-        post_content: 'post content 3',
+        title: 'SQL vs. MongoDB',
+        post_content: "Don't know when to use SQL vs. MongoDB? This post will teach you how!",
         user_id: 3
     }
 ];
