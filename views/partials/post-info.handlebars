@@ -1,9 +1,8 @@
-<article class="post">
-  <div class="title">
-    <a href="{{post_content}}" target="_blank">{{title}}</a>
-    <span>({{post_content}})</span>
+<div class="card">
+  <div class="card-header">
+    <h2><a class="link" href="/post/{{id}}">{{title}}</a></h2>
+    <p>Created by {{user.username}}</p>
   </div>
-  <div class="meta">
-    <a href="/post/{{id}}">{{comments.length}} {{comments.length}}</a>
-  </div>
-</article>
+
+    <p>{{post_content}}</p>
+</div>

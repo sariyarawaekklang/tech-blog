@@ -3,17 +3,16 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-// get all posts for dashboard
+// get all posts to show on dashboard
 router.get('/', withAuth, (req, res) => {
   console.log(req.session);
-  console.log('======================');
   Post.findAll({
     where: {
       user_id: req.session.user_id
     },
     attributes: [
       'id',
-      'post_url',
+      'post_content',
       'title',
       'created_at'
     ],
@@ -46,7 +45,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
   Post.findByPk(req.params.id, {
     attributes: [
       'id',
-      'post_url',
+      'post_content',
       'title',
       'created_at'
     ],
@@ -80,6 +79,11 @@ router.get('/edit/:id', withAuth, (req, res) => {
     .catch(err => {
       res.status(500).json(err);
     });
+});
+
+// to add a new post
+router.get('/add', (req, res) => {
+  res.render('add-post');
 });
 
 module.exports = router;
